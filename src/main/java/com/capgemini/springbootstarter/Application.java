@@ -9,12 +9,12 @@ import org.springframework.core.env.Environment;
 
 
 @SpringBootApplication
-public class SpringBootStarterApplication {
+public class Application {
 	
-	private static final Logger log = LoggerFactory.getLogger(SpringBootStarterApplication.class);
+	private static final Logger log = LoggerFactory.getLogger(Application.class);
 
 	public static void main(String[] args) {
-        Environment env = SpringApplication.run(SpringBootStarterApplication.class, args).getEnvironment();
+        Environment env = SpringApplication.run(Application.class, args).getEnvironment();
         
         String protocol = "http";
         if (env.getProperty("server.ssl.key-store") != null) {

@@ -8,6 +8,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import com.capgemini.springbootstarter.domain.Role;
 import com.capgemini.springbootstarter.domain.User;
 import com.capgemini.springbootstarter.repository.UserRepository;
 
@@ -32,11 +33,12 @@ public class DataInit implements ApplicationRunner {
 				User user = new User();
 				user.setFirstName("firstName"+i);
 				user.setLastName("lastName"+i);
+				user.setLogin("login"+i);
+				user.setPassword("password"+i);
 				users.add(user);
 			}
 			userRepo.saveAll(users);
 		}
 	}
 	
-
 }
